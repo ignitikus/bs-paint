@@ -1,3 +1,15 @@
+let addDiv = (times) => {
+    let counter = 0;
+    while (times > counter){
+        let newDiv = document.createElement('div')
+        document.querySelector('.canvas').appendChild(newDiv)
+        newDiv.classList.add("square", "color-2")
+        counter++
+    }
+}
+
+addDiv(100)
+
 let changeColor = (event) => {
     let targetArray = Array.from(event.target.classList)
     let list = Array.from(document.querySelector('.current-brush').classList)
@@ -17,9 +29,16 @@ let paint = (event)=>{
     event.target.classList.replace(`${targetArr[1]}`,`${list[1]}`)
 }
 
-
 let canvasElements = document.querySelectorAll('.square');
 for(let i = 0; i<canvasElements.length; i++){
     canvasElements[i].addEventListener('click',paint);
 }
 
+
+document.querySelector('.app').style.height = '700px'
+document.querySelector('.paint').style.height = '800px'
+document.querySelector('.paint').style.width = '800px'
+document.querySelector('.canvas').style.width = '500px'
+document.querySelector('.canvas').style.height = '500px'
+document.querySelector('.canvas').style.gridTemplateColumns = 'repeat(10, 1fr)'
+document.querySelector('.canvas').style.gridTemplateRows = 'repeat(10, 1fr)'
