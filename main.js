@@ -1,3 +1,11 @@
+document.querySelector('.app').style.height = '700px'
+document.querySelector('.paint').style.height = '800px'
+document.querySelector('.paint').style.width = '800px'
+document.querySelector('.canvas').style.width = '500px'
+document.querySelector('.canvas').style.height = '500px'
+document.querySelector('.canvas').style.gridTemplateColumns = 'repeat(10, 1fr)'
+document.querySelector('.canvas').style.gridTemplateRows = 'repeat(10, 1fr)'
+
 let addDiv = (times) => {
     let counter = 0;
     while (times > counter){
@@ -7,7 +15,6 @@ let addDiv = (times) => {
         counter++
     }
 }
-
 addDiv(100)
 
 let changeColor = (event) => {
@@ -16,12 +23,10 @@ let changeColor = (event) => {
     document.querySelector('.current-brush').classList.replace(`${list[1]}`,`${targetArray[1]}`)
 }
 
-
 let element = document.querySelectorAll('.palette-color');
 for(let i = 0; i<element.length; i++){
     element[i].addEventListener('click',changeColor)
 }
-
 
 let paint = (event)=>{
     let targetArr = Array.from(event.target.classList);
@@ -45,11 +50,8 @@ for(let i = 0; i<canvasElements.length; i++){
     canvasElements[i].addEventListener('click',achievement);
 }
 
+const reset=()=>{
+    document.location.reload(true);
+}
 
-document.querySelector('.app').style.height = '700px'
-document.querySelector('.paint').style.height = '800px'
-document.querySelector('.paint').style.width = '800px'
-document.querySelector('.canvas').style.width = '500px'
-document.querySelector('.canvas').style.height = '500px'
-document.querySelector('.canvas').style.gridTemplateColumns = 'repeat(10, 1fr)'
-document.querySelector('.canvas').style.gridTemplateRows = 'repeat(10, 1fr)'
+document.querySelector('.erase-button').addEventListener('click', reset)
