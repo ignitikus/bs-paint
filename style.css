@@ -101,3 +101,24 @@
 .color-14{
   background-color: navy;
 }
+
+.transparency{
+  opacity: 0;
+}
+
+.achiev-1{
+  color:ivory;
+  font-size: 2em;
+}
+
+#achievements{
+  position: absolute;
+  right: 10%;
+  top: 25vh;
+  width: 200px;
+  height: 400px;
+}
+
+#achiev-heading{
+  font-size: 2em;
+}

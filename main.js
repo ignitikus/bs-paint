@@ -29,9 +29,20 @@ let paint = (event)=>{
     event.target.classList.replace(`${targetArr[1]}`,`${list[1]}`)
 }
 
+let achievement = ()=>{
+    document.querySelector('.achiev-1').classList.toggle('transparency');
+    let brushClasses = Array.from(document.querySelector('.current-brush').classList);
+    document.querySelector('.achiev-1').classList.add(`${brushClasses[1]}`)
+    for(let i = 0; i<canvasElements.length; i++){
+        canvasElements[i].removeEventListener('click',achievement);
+    }
+    
+}
+
 let canvasElements = document.querySelectorAll('.square');
 for(let i = 0; i<canvasElements.length; i++){
     canvasElements[i].addEventListener('click',paint);
+    canvasElements[i].addEventListener('click',achievement);
 }
 
 
